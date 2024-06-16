@@ -23,12 +23,10 @@ app.initializers.add('minceheid/imageblur', () => {
         ref.parentNode.insertBefore(style, ref);
       }
       
-      const imgs=document.querySelectorAll('div.Post-body img[title="flarum-img"]');
+      // find any images
+      const imgs=document.querySelectorAll('div.Post-body img[title="flarum-img"]:not([class*="flarum-img"])')
       imgs.forEach(function(img) {
-          console.log(img);
           img.setAttribute('class','flarum-img');
-          console.log(img);
-
       })
     });
   });
